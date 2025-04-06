@@ -1,30 +1,44 @@
-// usePageSettings.js
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+function getHeaderFromHash() {
+  const hash = window.location.hash; // e.g., "#/ABC123EF"
+  return hash ? hash.replace("#/", "") : "Home Page";
+}
 
 export default function usePageSettings() {
-  const path = window.location.pathname;
-  const initialHeader = path === "/" ? "Home Page" : path.substring(1);
-  const [headerText] = useState(initialHeader);
+  // Set initial header based on the URL hash.
+  const [headerText, setHeaderText] = useState(getHeaderFromHash());
+
+  useEffect(() => {
+    // When the hash changes, update the header state.
+    function handleHashChange() {
+      setHeaderText(getHeaderFromHash());
+    }
+    window.addEventListener("hashchange", handleHashChange);
+    // Clean up the event listener when unmounting.
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   // Generates a random 8-character hexadecimal string.
   const generateRandomHex = () => {
-    let result = '';
-    const characters = '0123456789ABCDEF';
+    let result = "";
+    const characters = "0123456789ABCDEF";
     for (let i = 0; i < 8; i++) {
       result += characters.charAt(Math.floor(Math.random() * 16));
     }
     return result;
   };
 
-  // Button actions.
+  // Instead of doing a full page redirect, we update the URL hash.
   const openNewPage = () => {
     const randomHex = generateRandomHex();
-    const newUrl = 'https://davisanderson11.github.io/Throughline/' + randomHex;
-    window.location.href = newUrl;
+    // This will trigger the hashchange event and update headerText.
+    window.location.hash = "/" + randomHex;
   };
 
+  // Remove the hash to return to home.
   const returnHome = () => {
-    window.location.href = 'https://davisanderson11.github.io/Throughline/';
+    window.location.hash = "";
   };
 
   return { headerText, openNewPage, returnHome };
