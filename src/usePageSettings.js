@@ -19,12 +19,12 @@ export default function usePageSettings() {
   // Button actions.
   const openNewPage = () => {
     const randomHex = generateRandomHex();
-    const newUrl = window.location.origin + '/' + randomHex;
+    const newUrl = 'https://davisanderson11.github.io/Throughline/' + randomHex;
     window.location.href = newUrl;
   };
 
   const returnHome = () => {
-    window.location.href = window.location.origin + '/';
+    window.location.href = 'https://davisanderson11.github.io/Throughline/';
   };
 
   return { headerText, openNewPage, returnHome };
