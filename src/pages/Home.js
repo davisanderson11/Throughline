@@ -22,10 +22,10 @@ function Home() {
 
   return (
     <div id = "home-root">
-      <div id = "header">
+      <div class = "header">
       </div>
       <div id = "content">
-        <div id = "sidebar">
+        <div class = "sidebar">
           <div id = "home-button">
             <div id = "icon-wrapper">
               <div id = "icon-main">
