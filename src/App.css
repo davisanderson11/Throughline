@@ -44,7 +44,7 @@ button {
   gap:10px;
 }
 
-#main {
+.main {
   background-color: rgb(255, 255, 255);
   height:90vh;
   width:80%;
@@ -53,7 +53,7 @@ button {
   box-sizing:border-box;
 }
 
-#content {
+.content {
   display: flex;
   flex-direction: row;
   height: 90vh;
@@ -61,14 +61,14 @@ button {
 
 /* Icons & Animation */
 
-#icon-wrapper {
+.icon-wrapper {
   position: relative;
   display: inline-block;
   cursor: pointer; /* Trigger on hover */
 }
 
-#icon-shadow,
-#icon-main {
+.icon-shadow,
+.icon-main {
   position: absolute;
   top: 0;
   left: 0;
@@ -77,7 +77,7 @@ button {
     z-index 0s linear 0.4s; /* delay z-index to match transform duration */
 }
 
-#icon-shadow {
+.icon-shadow {
   transform: translate(3px, 2px);
   z-index: 0;
   color: rgba(0, 0, 0, 0);
@@ -87,21 +87,21 @@ button {
   -webkit-text-fill-color: transparent;
 }
 
-#icon-main {
+.icon-main {
   transform: translate(0, 0);
   z-index: 1;
   color: rgba(0, 0, 0, 1);
 }
 
 /* On hover, switch transforms and z-index */
-#icon-wrapper:hover #icon-shadow {
+.icon-wrapper.active .icon-shadow {
   transform: translate(0, 0);
   z-index: 1;
   transition-delay: 0s;
 }
 
-#icon-wrapper:hover #icon-main {
-  transform: translate(4px, 4px);
+.icon-wrapper.active .icon-main {
+  transform: translate(3px, 2px);
   z-index: 0;
   transition-delay: 0s;
 }
