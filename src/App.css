@@ -1,13 +1,108 @@
-/* src/App.css */
-/* Add your custom styling here */
+/* Fonts */
+
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Main Content */
 
 .App {
   text-align: center;
   margin: 20px;
 }
 
+body{
+  margin: 0;
+}
+
 button {
   margin: 5px;
   padding: 10px 20px;
   font-size: 16px;
+  border: 1px solid rgb(0, 128, 255);
+  background-image: linear-gradient(45deg, rgb(94, 226, 255), rgb(255, 100, 229));
 }
+
+#header {
+  background-color: rgba(47, 47, 47, 0.445);
+  height: 10vh;
+  width:100%;
+  display:flex;
+  padding:0 20px;
+  box-sizing:border-box;
+}
+
+#sidebar {
+  background-color: rgb(83, 83, 83);
+  border: 2px solid rgba(47, 47, 47, 0.445);
+  height:90vh;
+  width:20%;
+  display:flex;
+  padding:0 20px;
+  box-sizing:border-box;
+  margin-right:auto;
+  flex-direction:column;
+}
+
+#main {
+  background-color: rgb(255, 255, 255);
+  height:90vh;
+  width:80%;
+  display:flex;
+  padding:0,20px;
+  box-sizing:border-box;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+}
+
+/* Icons & Animation */
+
+#icon-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer; /* Trigger on hover */
+}
+
+#icon-shadow,
+#icon-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 
+    transform 0.4s ease,
+    z-index 0s linear 0.4s; /* delay z-index to match transform duration */
+}
+
+#icon-shadow {
+  transform: translate(3px, 2px);
+  z-index: 0;
+  color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(red, yellow);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#icon-main {
+  transform: translate(0, 0);
+  z-index: 1;
+  color: rgba(0, 0, 0, 1);
+}
+
+/* On hover, switch transforms and z-index */
+#icon-wrapper:hover #icon-shadow {
+  transform: translate(0, 0);
+  z-index: 1;
+  transition-delay: 0s;
+}
+
+#icon-wrapper:hover #icon-main {
+  transform: translate(4px, 4px);
+  z-index: 0;
+  transition-delay: 0s;
+}
+

@@ -21,10 +21,38 @@ function Home() {
   };
 
   return (
-    <div>
-      <h1>Home Page</h1>
-      <p>Welcome to the home page.</p>
-      <button onClick={navigateToProfile}>Go to a Random Profile</button>
+    <div id = "home-root">
+      <div id = "header">
+      </div>
+      <div id = "content">
+        <div id = "sidebar">
+          <div id = "home-button">
+            <div id = "icon-wrapper">
+              <div id = "icon-main">
+                <span class="material-symbols-rounded">home</span>
+              </div>
+              <div id = "icon-shadow">
+                <span class="material-symbols-rounded">home</span>
+              </div>
+            </div>
+          </div>
+          <div id = "search-button">
+            <div id = "icon-wrapper">
+              <div id = "icon-main">
+                <span class="material-symbols-rounded">search</span>
+              </div>
+              <div id = "icon-shadow">
+                <span class="material-symbols-rounded">search</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id = "main">
+          <div id = "random-temp">
+            <button onClick={navigateToProfile}>Go to a Random Profile</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

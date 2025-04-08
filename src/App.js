@@ -11,6 +11,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Throughline" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile/:uuid" element={<Profile />} />
       </Routes>
