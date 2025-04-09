@@ -23,9 +23,13 @@ function Sidebar() {
         navigate(`/profile/${hex}`);
     };
 
+    const goHome = () => {
+        navigate('/');
+    };
+
     return (
         <div class="sidebar">
-            <div id="home-button" onClick={() => setActiveIcon('home')}>
+            <div id="home-button" onClick={() => { setActiveIcon('home'); setTimeout(() => { goHome(); }, 400); }}>
                 <div className={`icon-wrapper ${activeIcon === 'home' ? 'active' : ''}`}>
                     <div class="icon-main">
                         <span class="material-symbols-rounded">home</span>
