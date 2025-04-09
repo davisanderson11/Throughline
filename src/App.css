@@ -81,7 +81,7 @@ button {
   transform: translate(3px, 2px);
   z-index: 0;
   color: rgba(0, 0, 0, 0);
-  background-image: linear-gradient(45deg, #5ee2ff, #ff64e5);
+  background-image: linear-gradient(45deg, #5ee2ff, #ff64e5); /* Colors https://coolors.co/5ee2ff-ff64e5-3e3c3c-b8b6b2-d1d1d1 */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
