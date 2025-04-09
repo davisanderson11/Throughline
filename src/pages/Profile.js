@@ -2,6 +2,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
+import Header from '../components/Header';
 
 function Profile() {
   const { uuid } = useParams();
@@ -9,8 +10,7 @@ function Profile() {
 
   return (
     <div id="profile-root">
-      <div class="header">
-      </div>
+      <Header />
       <div class="content">
         <Sidebar />
         <div class="main">
