@@ -11,6 +11,7 @@ function Home() {
       <div class="content">
         <Sidebar />
         <div class="main">
+          <button>New Profile</button>
         </div>
       </div>
     </div>
